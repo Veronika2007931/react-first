@@ -1,11 +1,12 @@
 
 import './App.css';
-import { Painting } from './components/Paintitg/Painting'
+import painting from './components/painting.json'
+import { PaintingList } from './components/PaintitgList/PaintingList'
 
 function App() {
   return (
     <>
-       <Painting />
+       <PaintingList painting={painting} />
     </>
   );
 }
