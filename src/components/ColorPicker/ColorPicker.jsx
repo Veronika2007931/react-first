@@ -1,14 +1,16 @@
-import s from './ColorPicker.module.css'
+// import s from './ColorPicker.module.css'
+import{Container, Title, ColorpickerOption} from "./ColorPicker.styled"
 
 export const ColorPicker = ({options}) => {
     return (
-        <div className={s.container}>
-  <h2 className={s.title}>Color Picker</h2>
+        <Container >
+  <Title >Color Picker</Title>
   {options.map(({label, color}) => (
-  <div className={s.option} style = {{backgroundColor: color}}>
+  <ColorpickerOption key={label}
+       bgc = {color}>
     <span >{label}</span>
-  </div>))}
+  </ColorpickerOption>))}
   
-</div>
+</Container>
     )
 }
