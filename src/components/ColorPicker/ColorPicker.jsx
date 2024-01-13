@@ -1,16 +1,36 @@
-// import s from './ColorPicker.module.css'
+import React, {Component} from "react"
 import{Container, Title, ColorpickerOption} from "./ColorPicker.styled"
 
-export const ColorPicker = ({options}) => {
+export class ColorPicker extends Component{
+
+state={
+  colorOptionIdx: 0
+}
+handleClick=(optionId)=>{
+  if(optionId === this.state.colorOptionIdx){
+    return
+  }
+  this.setState({colorOptionIdx: optionId})
+}
+  render(){
+const {options} = this.props;
+const {colorOptionIdx} = this.state
+const label = options[colorOptionIdx].lable
     return (
-        <Container >
-  <Title >Color Picker</Title>
-  {options.map(({label, color}) => (
-  <ColorpickerOption key={label}
-       bgc = {color}>
-    <span >{label}</span>
-  </ColorpickerOption>))}
-  
+      <Container >
+<Title >Color Picker</Title>
+<span >Обраний колір:{label}</span>
+{this.props.options.map(({label, color}, idx) => (
+<ColorpickerOption
+     onClick = {()=>{this.handleClick(idx)}}
+     key={label}
+     bgc = {color}
+     idx={idx}
+     currentIdx={colorOptionIdx}>
+
+</ColorpickerOption>))}
+
 </Container>
-    )
+  
+  )}
 }
