@@ -7,6 +7,7 @@ import { ColorPicker } from '../ColorPicker/ColorPicker';
 // import {Alert} from '../Alert/Alert.jsx'
 import{GlobalStyles} from "../../GlobalStyle.styled.jsx"
 // import {DropdownMenu} from "../DropdownMenu/DropdownMenu.jsx"
+import {Form} from "../SignupForm/Form"
 
 // import {Title, Container} from "./App.styled.jsx"
 function App() {
